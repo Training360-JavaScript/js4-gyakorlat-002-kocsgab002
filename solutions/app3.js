@@ -17,8 +17,8 @@ const getMovieData = () => movieData;
  * megfelelő hibaüzenetet a console.log segítségével.
  * @param {string} url a távoli erőforrás címe, ahonnan lekérjük az adatokat
  */
-const getMovies = (method = 'GET', url = '') => {
-    fetch(url, {method: `${method}`})
+const getMovies = (url = '') => {
+    fetch(url)
         .then( resopne => resopne.json())
         .then(data => movieData = data)
         .catch(

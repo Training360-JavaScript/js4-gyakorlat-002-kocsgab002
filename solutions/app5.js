@@ -49,8 +49,8 @@ const sortProducts = (products = [{ name: '' }]) => {
  * megfelelő hibaüzenetet a console.log segítségével.
  * @param {string} url a távoli erőforrás címe, ahonnan lekérjük az adatokat
  */
-const getProducts = (method = 'GET', url = '') => {
-    fetch(url, {method: `${method}`})
+const getProducts = (url = '') => {
+    fetch(url)
     .then(response => response.json())
     .then(data => productData = sortProducts(data))
     .catch(

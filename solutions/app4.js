@@ -19,8 +19,8 @@ const getCustomerData = () => customerData;
  * megfelelő hibaüzenetet a console.log segítségével.
  * @param {string} url a távoli erőforrás címe, ahonnan lekérjük az adatokat
  */
-const getCustomers = (method = 'GET', url = '') => {
-    fetch(url, {method: `${method}`})
+const getCustomers = ( url = '') => {
+    fetch(url)
     .then(response => response.json())
     .then(data => customerData = data)
     .catch(
