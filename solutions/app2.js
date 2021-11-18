@@ -18,9 +18,9 @@ const getUserData = () => userData;
  * megfelelő hibaüzenetet a console.log segítségével.
  * @param {string} url a távoli erőforrás címe, ahonnan lekérjük az adatokat
  */
-const getUsers = (url = '') => {
-    fetch('')
-        .then(() => {})
+const getUsers = ( url = '') => {
+    fetch(url)
+        .then(respone => respone.json())
         .then(data => userData = data)
         .catch(
             () => console.log(`Error: ${url} is not found!`),
@@ -32,6 +32,6 @@ const getUsers = (url = '') => {
  * CSAK A 35. SORBAN DOLGOZZ!
  */
 export {
-    
+    getUsers,
     getUserData,
 }
