@@ -17,10 +17,10 @@ const getMovieData = () => movieData;
  * megfelelő hibaüzenetet a console.log segítségével.
  * @param {string} url a távoli erőforrás címe, ahonnan lekérjük az adatokat
  */
-const getMovies = (url = '') => {
-    fetch('')
-        .then(() => {})
-        .then(() => {})
+const getMovies = (method = 'GET', url = '') => {
+    fetch(url, {method: `${method}`})
+        .then( resopne => resopne.json())
+        .then(data => movieData = data)
         .catch(
             () => console.log(`Error: ${url} is not found!`),
         );
@@ -31,6 +31,6 @@ const getMovies = (url = '') => {
  * CSAK A 34. SORBAN DOLGOZZ!
  */
 export {
-    
+    getMovies,
     getMovieData,
 }

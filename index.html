@@ -23,13 +23,18 @@
         startFetch('GET', 'https://nettuts.hu/jms/js4-002/users?limit=5');
         setTimeout( () => {
             console.log(`Test server data: `, getServerData());
-        }, 3000);
+        }, 1000);
 
         window.startFetch = startFetch;
         window.getServerData = getServerData;
 
-        import { getUsers, getUserData } from './solutions/app2.js';
+         import { getUsers, getUserData } from './solutions/app2.js';
         // https://nettuts.hu/jms/js4-002/users?limit=5
+
+        getUsers('GET', 'https://nettuts.hu/jms/js4-002/users?limit=5');
+        setTimeout( () => {
+            console.log(`Test user data: `, getUserData());
+        }, 2000);
 
         window.getUsers = getUsers;
         window.getUserData = getUserData;
@@ -37,22 +42,37 @@
         import { getMovies, getMovieData } from './solutions/app3.js';
         // https://nettuts.hu/jms/js4-002/movies?limit=5
 
+        getMovies('GET', 'https://nettuts.hu/jms/js4-002/movies?limit=5');
+        setTimeout( () => {
+            console.log(`Test Movies data: `, getMovieData());
+        }, 3000);
+
         window.getMovies = getMovies;
         window.getMovieData = getMovieData;
 
         import { getCustomers, getCustomerData } from './solutions/app4.js';
         // https://nettuts.hu/jms/js4-002/users?limit=5
 
+        getCustomers('GET', 'https://nettuts.hu/jms/js4-002/users?limit=5');
+        setTimeout( () => {
+            console.log(`Test Customers data: `, getCustomerData());
+        }, 4000);
+
         window.getCustomers = getCustomers;
         window.getCustomerData = getCustomerData;
 
         import { getProducts, getProductData } from "./solutions/app5.js";
 
+        getProducts('GET', 'https://nettuts.hu/jms/js4-002/products?limit=3');
+        setTimeout( () => {
+            console.log(`Test Products data: `, getProductData());
+        }, 5000);
+
         // Csak teszteléshez.
         window.getProducts = getProducts;
         window.getProductData = getProductData;
 
-        // window.getProducts('https://nettuts.hu/jms/js4-002/products?limit=3');
+        //window.getProducts('https://nettuts.hu/jms/js4-002/products?limit=3'); 
 
     </script>
     <div id="for-test"></div>
